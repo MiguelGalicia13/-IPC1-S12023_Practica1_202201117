@@ -21,6 +21,7 @@ public class Practica_1 {
     static int nclientes=0;
     static int nits=0; 
     static int nventas[]=new int[50];
+    static String ventas[]= new String [50];
      // ir almacenando datos de los clientes de las ventas
     
  
@@ -265,10 +266,14 @@ public class Practica_1 {
         }
         }
             System.out.println("VENTAS");
+           
+            
             for(int n=0;n<=nventas.length;n++){
                 System.out.println("Cantidad       "+"Mercaderia  ");
                 if(nventas[n]!=0){
-                    System.out.println(nventas[n]+"--------------"+inventario[n]);
+
+                    
+                    System.out.println(nventas[n]+"--------------"+ventas[n]);
                 }else if(nventas[n]==0){
                     System.out.println("No hay ventas");
                     break;
@@ -302,6 +307,7 @@ public class Practica_1 {
                     System.out.println("Ingresar nuevo producto");
                     cantidad[i]=cantidad[i]-n;
                     nventas[i]=n;
+                    ventas[i]=producto;
                     String cont=sc.nextLine();
                     continuar = cont.equals("si");   
                 }
