@@ -8,7 +8,7 @@ public class Practica_1 {
     static String contra="ipc1_202201117";
     static String codigodescuentos[]= new String [50];// array para almacenar codigo de descuentos
     static int descuento[] = new int [50]; // array que almacena el % de descuento de los codigos
-    static int numdesc=5;
+    static int numdesc=0;
     static int pin=0;
     static int ppre=0;
     static int pcant=0;
@@ -125,20 +125,18 @@ public class Practica_1 {
         }
     }
     public static void descuentos(){
-      Scanner sc = new Scanner(System.in);
-        for(int n=0;n<=codigodescuentos.length-1;n++){        
+        Scanner sc = new Scanner(System.in);
+        String codigo_desc;
         System.out.println("ingrese el nuevo codigo");
-        String codigo_desc = sc.nextLine();
+        codigo_desc = sc.nextLine();
+        for(int n=0;n<=codigodescuentos.length-1;n++){        
         int longitud = codigo_desc.length();            // Almacena la longitud del codigo
-        while(longitud!=4||codigo_desc.equals(codigodescuentos[n])){         // Verifica quue los codigos si tienen 4 digitos
-            if(longitud!=4){
-                System.out.println("Codigo invalido");
-            }else{
-                System.out.println("El codigo ya esta registrado");
-            }
+        while(longitud!=4 || codigo_desc.equals(codigodescuentos[n])){         // Verifica quue los codigos si tienen 4 digitos
+            System.out.println("Codigo invalido intente nuevamente");
             System.out.println("Intente nuevamente");
             codigo_desc = sc.nextLine();
             longitud = codigo_desc.length();
+        }
         }
         System.out.println("De cuanto es el descuento?");
         int des=sc.nextInt();
@@ -150,8 +148,6 @@ public class Practica_1 {
         descuento[numdesc]=des;
         numdesc++;          //Esto se hace con la finalidad de que se cada codigo se vaya almacenando en el array
         System.out.println("Se registro el codigo de descuento: "+codigo_desc+" Que aplica un descuento del: "+des+"%");
-        break;
-        } 
     }
     public static void agregar_productos(){
         Scanner sc = new Scanner(System.in);
