@@ -71,8 +71,8 @@ public class Practica_1 {
     inventario[3]="Jabon de manos";
     precios[3]=20;
     cantidad[3]=10;
-    inventario[4]="Gaseosa";
-    precios[4]=15;
+    inventario[4]="CocaCola";
+    precios[4]=8;
     cantidad[4]=30;
     inventario[5]="Cervezas";
     precios[5]=40;
@@ -80,6 +80,45 @@ public class Practica_1 {
     inventario[6]="Pan";
     precios[6]=12;
     cantidad[6]=45;
+    inventario[7]="Pringles";
+    precios[7]=10;
+    cantidad[7]=50;
+    inventario[8]="Sprite";
+    precios[8]=6;
+    cantidad[8]=15;
+    inventario[9]="Tortix";
+    precios[9]=1.5;
+    cantidad[9]=40;
+    inventario[10]="Ketchup";
+    precios[10]=15;
+    cantidad[10]=20;
+    inventario[11]="Sal";
+    precios[11]=5;
+    cantidad[11]=20;
+    inventario[12]="Tortillas";
+    precios[12]=12;
+    cantidad[12]=20;
+    inventario[13]="Agua";
+    precios[13]=5;
+    cantidad[13]=25;
+    inventario[14]="Tenis";
+    precios[14]=150;
+    cantidad[14]=25;
+    inventario[15]="Calcetines";
+    precios[15]=25;
+    cantidad[15]=20; // en pares
+    inventario[16]="Camiseta";
+    precios[16]=25;
+    cantidad[16]=20;
+    inventario[17]="Sandalias";
+    precios[17]=30;
+    cantidad[17]=20;
+    inventario[18]="Pelota";
+    precios[18]=15;
+    cantidad[18]=20;
+    inventario[19]="Chicle";
+    precios[19]=10;
+    cantidad[19]=20;        
     codigodescuentos[0]="afsg";
     descuento[0]=15;
     codigodescuentos[1]="altf";
@@ -90,6 +129,36 @@ public class Practica_1 {
     descuento[3]=5;
     codigodescuentos[4]="ggez";  
     descuento[4]=80;
+    codigodescuentos[5]="momy";  
+    descuento[5]=13;
+    codigodescuentos[6]="1300";  
+    descuento[6]=50;
+    codigodescuentos[7]="valo";  
+    descuento[7]=33;
+    codigodescuentos[8]="ggez";  
+    descuento[8]=80;
+    codigodescuentos[9]="ch4m";  
+    descuento[9]=15;
+    codigodescuentos[10]="ch4m";  
+    descuento[10]=66;
+    codigodescuentos[11]="hspr";  
+    descuento[11]=23;
+    codigodescuentos[12]="asct";  
+    descuento[12]=30;
+    codigodescuentos[13]="bind";  
+    descuento[13]=90;
+    codigodescuentos[14]="gesa";  
+    descuento[14]=30;
+    codigodescuentos[15]="wobb";  
+    descuento[15]=6;
+    codigodescuentos[16]="hnzo";  
+    descuento[16]=36;
+    codigodescuentos[17]="ovw2";  
+    descuento[17]=22;
+    codigodescuentos[18]="ltus";  
+    descuento[18]=23;
+    codigodescuentos[19]="csgo";  
+    descuento[11]=25;
     }
     public static void menu(){
         Scanner sc = new Scanner(System.in);
@@ -127,8 +196,8 @@ public class Practica_1 {
     public static void descuentos(){
         Scanner sc = new Scanner(System.in);
         String codigo_desc;
-        System.out.println("ingrese el nuevo codigo");
         codigo_desc = sc.nextLine();
+        System.out.println("ingrese el nuevo codigo");
         for(int n=0;n<=codigodescuentos.length-1;n++){        
         int longitud = codigo_desc.length();            // Almacena la longitud del codigo
         while(longitud!=4 || codigo_desc.equals(codigodescuentos[n])){         // Verifica quue los codigos si tienen 4 digitos
@@ -246,24 +315,23 @@ public class Practica_1 {
             System.out.println("Ingrese el codigo");
             String code=sc.nextLine();
             for(int r=0;r<=codigodescuentos.length-1;r++){
-            if(code.equals(codigodescuentos[r])){// revisa si existe el codigo de descuento y nos iduica de cuanto es y realiza los calculos
-                System.out.println("Codigo: "+codigodescuentos[r]+" con un descuento del: "+descuento[r]+"%");
-                double descontar =descuento[r];
-                System.out.println("El subtotal es de: Q"+subtotal);
-                double subdescuento=(descontar/100)*subtotal;
-                System.out.println("Descuento: Q"+subdescuento);
-                double totalpagar=subtotal-subdescuento;
-                System.out.println("Total a pagar: Q"+totalpagar);
-                System.out.println("Imprimiendo factura");
-                break;
                 
-            }else{//realiza calculos sin descuentos
-                System.out.println("El subtotal es de: Q"+subtotal);
+                if(code.equals(codigodescuentos[r])){// revisa si existe el codigo de descuento y nos iduica de cuanto es y realiza los calculos
+                    System.out.println("Codigo: "+codigodescuentos[r]+" con un descuento del: "+descuento[r]+"%");
+                    double descontar =descuento[r];
+                    System.out.println("El subtotal es de: Q"+subtotal);
+                    double subdescuento=(descontar/100)*subtotal;
+                    System.out.println("Descuento: Q"+subdescuento);
+                    double totalpagar=subtotal-subdescuento;
+                    System.out.println("Total a pagar: Q"+totalpagar);
+                    System.out.println("Imprimiendo factura");
+                    break;
+            }//realiza calculos sin descuentos
+            }
+                 
+        }     
+        System.out.println("El subtotal es de: Q"+subtotal);
                 System.out.println("Descuento: Q0.00");
                 System.out.println("Total a pagar: Q"+subtotal);
-            }
-        }
-            
-        }        
     }
 }// ultimo corchete
