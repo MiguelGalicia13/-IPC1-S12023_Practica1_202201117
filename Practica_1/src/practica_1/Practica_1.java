@@ -20,6 +20,7 @@ public class Practica_1 {
     static String nitclientes[]=new String[1000];
     static int nclientes=0;
     static int nits=0; 
+    static int vendidos[]=new int[50];
     static int nventas[]=new int[50];
     static String ventas[]= new String [50];
      // ir almacenando datos de los clientes de las ventas
@@ -304,7 +305,8 @@ public class Practica_1 {
                     System.out.println(n+"  "+producto+"   "+subproducto);
                     subtotal=subtotal+subproducto;
                     sc.nextLine();
-                    System.out.println("Ingresar nuevo producto");
+                    vendidos[i]=n;
+                    System.out.println("Ingresar nuevo producto, si o no?");
                     cantidad[i]=cantidad[i]-n;
                     nventas[i]=n;
                     ventas[i]=producto;
@@ -333,9 +335,12 @@ public class Practica_1 {
                     System.out.println("Imprimiendo factura");
                     break;
             }//realiza calculos sin descuentos
-            }
-                 
+            }                 
         }     
+        
+        for(int j=0;j<=nventas.length-1;j++){
+            System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
+        }
         System.out.println("El subtotal es de: Q"+subtotal);
                 System.out.println("Descuento: Q0.00");
                 System.out.println("Total a pagar: Q"+subtotal);
