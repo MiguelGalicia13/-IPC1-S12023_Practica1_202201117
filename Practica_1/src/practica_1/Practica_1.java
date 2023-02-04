@@ -315,7 +315,7 @@ public class Practica_1 {
         }
         System.out.println("Nombre: "+nombre);
         System.out.println("NIT: "+nit);
-        System.out.println("Hay codigo de descuento?");
+        System.out.println("Hay codigo de descuento, si o no?");
         String respuesta= sc.nextLine();
         if(respuesta.equals("si")){
             System.out.println("Ingrese el codigo");
