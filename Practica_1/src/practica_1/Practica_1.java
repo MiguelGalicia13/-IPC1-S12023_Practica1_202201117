@@ -20,6 +20,7 @@ public class Practica_1 {
     static String nitclientes[]=new String[1000];
     static int nclientes=0;
     static int nits=0; 
+    static double subtotales[]=new double [50];
     static int vendidos[]=new int[50];
     static int nventas[]=new int[50];
     static String ventas[]= new String [50];
@@ -310,13 +311,14 @@ public class Practica_1 {
                     cantidad[i]=cantidad[i]-n;
                     nventas[i]=n;
                     ventas[i]=producto;
+                    subtotales[i]=subproducto;
                     String cont=sc.nextLine();
                     continuar = cont.equals("si");   
                 }
             } 
         }
         System.out.println("Nombre: "+nombre);
-        if(nit == null){
+        if(nit == ""){
             System.out.println("NIT: CF");
         }else{
             System.out.println("NIT: "+nit);
@@ -330,8 +332,8 @@ public class Practica_1 {
                 
                 if(code.equals(codigodescuentos[r])){// revisa si existe el codigo de descuento y nos iduica de cuanto es y realiza los calculos
                      for(int j=0;j<=nventas.length-1;j++){
-                         if(cantidad[j]!=0){
-                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
+                         if(vendidos[j]!=0){
+                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+subtotales[j]);
                          }
                     }
                     System.out.println("Codigo: "+codigodescuentos[r]+" con un descuento del: "+descuento[r]+"%");
@@ -347,8 +349,8 @@ public class Practica_1 {
             }                 
         }else{ 
             for(int j=0;j<=nventas.length-1;j++){
-                         if(cantidad[j]!=0){
-                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
+                         if(vendidos[j]!=0){
+                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+subtotales[j]);
                          }
                     }
             System.out.println("El subtotal es de: Q"+subtotal);
