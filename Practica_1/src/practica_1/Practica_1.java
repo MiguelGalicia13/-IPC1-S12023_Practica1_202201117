@@ -325,6 +325,9 @@ public class Practica_1 {
             for(int r=0;r<=codigodescuentos.length-1;r++){
                 
                 if(code.equals(codigodescuentos[r])){// revisa si existe el codigo de descuento y nos iduica de cuanto es y realiza los calculos
+                     for(int j=0;j<=nventas.length-1;j++){
+                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
+                    }
                     System.out.println("Codigo: "+codigodescuentos[r]+" con un descuento del: "+descuento[r]+"%");
                     double descontar =descuento[r];
                     System.out.println("El subtotal es de: Q"+subtotal);
@@ -336,13 +339,13 @@ public class Practica_1 {
                     break;
             }//realiza calculos sin descuentos
             }                 
-        }     
-        
-        for(int j=0;j<=nventas.length-1;j++){
-            System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
-        }
+        }else{ 
+            for(int j=0;j<=nventas.length-1;j++){
+                        System.out.println(vendidos[j]+"-----"+ventas[j]+"----"+nventas[j]);
+                    }
         System.out.println("El subtotal es de: Q"+subtotal);
                 System.out.println("Descuento: Q0.00");
                 System.out.println("Total a pagar: Q"+subtotal);
+        }
     }
 }// ultimo corchete
